@@ -40,6 +40,11 @@ post '/users/login' do
   end
 end
 
+post '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
+
 get '/photos' do
   @current_user = User.find session[:user_id]
   # @photos = Photo.all
