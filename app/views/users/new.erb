@@ -1,13 +1,27 @@
-<form class="main-form first">
+<form class="main-form first" method="post" action="/new">
   <div class="main-form__title">
     <h1>Sign-up</h1>
   </div>
   <div class="main-form__body">
-    <input class="main-form__body--input" type="text" placeholder="Username" />
-    <input class="main-form__body--input" type="email" placeholder="Email Address" />
-    <input class="main-form__body--input" type="password" placeholder="Password" />
-    <input class="main-form__body--input" type="password" placeholder="Repeat Password" />
+    <input class="main-form__body--input" type="text" value="<%= @user && @user.username %>" placeholder="Username" />
+    <input class="main-form__body--input" type="password" value="<%= @user && @user.password %>" placeholder="Password" />
     <button class="btn">Clear</button>
     <button class="btn">Register</button>
   </div>
 </form>  
+
+
+
+<!-- <form method="post" action="/users/new">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username" value="<%= @user && @user.username %>">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" value="<%= @user && @user.password %>">
+  </div>
+  <div>
+    <input type="submit" value="Sign Up">
+  </div>
+</form> -->

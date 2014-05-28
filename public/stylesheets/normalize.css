@@ -7,7 +7,7 @@
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: 'Rock Salt', cursive; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -412,6 +412,15 @@ optgroup {
  * Remove most spacing between table cells.
  */
 
+.home {
+  background-image:url("http://wallpapersus.com/wp-content/uploads/2012/11/Photographer-Taking-A-Picture.jpg");
+  background-size: 100%;
+}
+
+.title {
+  font-family: 'Satisfy';
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -427,13 +436,14 @@ th {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Futura;
+  font-family: 'Satisfy';
   outline: none;
 }
 
 body {
-  font-family: Futura;
-  background: #CDE8D5;
+  font-family: 'Satisfy';
+  background-image:url("http://wallpapersus.com/wp-content/uploads/2012/11/Photographer-Taking-A-Picture.jpg");
+  background-size: 100%;
 }
 
 .main-form:after {
@@ -443,8 +453,9 @@ body {
 }
 
 .main-form {
-  max-width: 300px;
-  margin: 40px auto;
+  max-width: 500px;
+  margin-top: 100px;
+  margin-left: 100px;
   padding: 20px;
   border-radius: 10px;
   background: white;
