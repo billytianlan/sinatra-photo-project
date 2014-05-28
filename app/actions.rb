@@ -12,8 +12,8 @@ post '/users/new' do
   username: params[:username],
   password: params[:password]
   )
-# binding.pry
   if @current_user.save
+  # binding.pry
     session[:user_id] = @current_user.id
     redirect "/photos"
   else
