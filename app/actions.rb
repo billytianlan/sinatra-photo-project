@@ -21,6 +21,25 @@ post '/users/new' do
   end
 end
 
+get '/users/login' do
+  erb :'users/login'
+end
+
+post '/users/login' do
+  @current_user = User.where(username: params[:username], password: params[:password]).first
+
+  @current_user = User.where("username = ? AND password = ? ", params[:username], params[:password]).first
+  
+  @current_user = User.find_by(username: params[:username], password: params[:password])
+
+  if @current_user
+    session[:user_id] = @current_user.id
+    redirect '/photos'
+  else
+    erb :'users/login'
+  end
+end
+
 get '/photos' do
   @current_user = User.find session[:user_id]
   # @photos = Photo.all
