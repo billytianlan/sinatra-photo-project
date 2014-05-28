@@ -1,4 +1,4 @@
-<form class="main-form first" method="post" action="/new">
+<form class="main-form first" method="post" action="/users/new">
   <div class="main-form__title">
     <h1>Sign-up</h1>
   </div>
@@ -6,7 +6,8 @@
     <input class="main-form__body--input" type="text" value="<%= @user && @user.username %>" placeholder="Username" />
     <input class="main-form__body--input" type="password" value="<%= @user && @user.password %>" placeholder="Password" />
     <button class="btn">Clear</button>
-    <button class="btn">Register</button>
+    <button class="btn"><input type="submit" value="Register"></button>
+
   </div>
 </form>  
 

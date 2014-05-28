@@ -3,11 +3,11 @@ get '/' do
   erb :index
 end
 
-get '/new' do
+get '/users/new' do
   erb :'users/new'
 end
 
-post '/new' do
+post '/users/new' do
   @current_user = User.new(
   username: params[:username],
   password: params[:password]
@@ -17,10 +17,25 @@ post '/new' do
     session[:user_id] = @current_user.id
     redirect "/photos"
   else
-    erb :'users/signup'
+    erb :'users/new'
   end
 end
 
-get '/login' do
-  erb :'users/login'
+get '/photos' do
+  @current_user = User.find session[:user_id]
+  # @photos = Photo.all
+  erb :'photos/index'
 end
+
+def current_user
+  @current_user ||= User.find(session[:user_id]) if session[:user_id]
+end
+
+def is_logged_in?
+  !current_user.nil? 
+end
+
+def authenticate
+  redirect '/users/login' unless is_logged_in?
+end
+

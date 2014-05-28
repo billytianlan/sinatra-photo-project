@@ -7,7 +7,7 @@
  */
 
 html {
-  font-family: 'Rock Salt', cursive; /* 1 */
+  font-family: 'Satisfy'; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -418,7 +418,7 @@ optgroup {
 }
 
 .title {
-  font-family: 'Satisfy';
+  font-family: 'Satisfy'
 }
 
 table {
@@ -554,3 +554,5 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+
