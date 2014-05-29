@@ -6,9 +6,10 @@
 
 
 <button id="newBtn">New</button>
+<button id="profBtn">My Profile</button>
 
 
 <% @photos.each do |photo| %>
-  <img src="<%= photo.url %>" >
+  <a href="/photos/<%= photo.id %>"><img src="<%= photo.url %>" ></a>
 <% end %>
 

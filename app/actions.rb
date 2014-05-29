@@ -105,6 +105,12 @@ get '/user' do
   erb :'user/show'
 end
 
+get '/photos/:id' do
+  @photo = Photo.find params[:id]
+  @current_user = User.find session[:user_id]
+  erb :'photos/show'
+end
+
 
 
 
