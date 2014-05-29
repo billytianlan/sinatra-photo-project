@@ -80,9 +80,12 @@ post '/photos/new' do
   description: params[:description],
   user_id:  @current_user.id
   )
-  @photo.save
+  if @photo.save
+    redirect '/user'
 # binding.pry 
+  else
   erb :'photos/show'
+  end
 end
 
 
@@ -94,6 +97,12 @@ end
 get '/photos/show' do
   @current_user = User.find session[:user_id]
   erb :'photos/new'
+end
+
+get '/user' do
+  @current_user = User.find session[:user_id]
+  @photos = @current_user.photos
+  erb :'user/show', :layout => :'logged_in'
 end
 
 
