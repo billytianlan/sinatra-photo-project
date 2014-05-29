@@ -111,6 +111,19 @@ get '/photos/:id' do
   erb :'photos/show'
 end
 
+post '/vote/:id' do
+  # binding.pry
+  @vote = Vote.new(
+    photo_id: params[:id],
+    user_id: session[:user_id]
+    )
+  @vote.save
+  redirect "/photos/#{params[:id]}"
+end
+
+
+
+
 
 
 

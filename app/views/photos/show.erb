@@ -2,5 +2,11 @@
 
 <img src="<%= @photo.url %>" >
 
+<form method="post" action="/vote/<%= @photo.id %>">
+  <input type="submit" value="Vote">
+</form>
+
+<h3>Number of Votes: <%= @photo.votes.size %></h3> 
+
 
 
