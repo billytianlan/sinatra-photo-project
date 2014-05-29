@@ -1,4 +1,11 @@
 # Homepage (Root path)
+# helpers do
+#   # Usable in ERB templates everywhere, and in any action below
+#   def current_user
+#     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+#   end
+# end
+
 get '/' do
   erb :index
 end
@@ -47,9 +54,60 @@ end
 
 get '/photos' do
   @current_user = User.find session[:user_id]
-  # @photos = Photo.all
+  @photos = Photo.all
   erb :'photos/index'
 end
+
+post '/photos' do
+  @current_user = User.find session[:user_id]
+    @photos = Photo.all
+  erb :'photos/show' 
+end
+
+
+
+get '/photos/new' do
+  @current_user = User.find(session[:user_id])
+  erb :'photos/new'
+end
+
+
+post '/photos/new' do
+  @current_user = User.find session[:user_id]
+  # @photos = Photo.all
+  @photo = Photo.new(
+  url: params[:url],
+  description: params[:description],
+  user_id:  @current_user.id
+  )
+  @photo.save
+# binding.pry 
+  erb :'photos/show'
+end
+
+
+# get 'photos/new' do
+#    @current_user = User.find session[:user_id]
+#    erb :'photos/new'
+# end
+
+get '/photos/show' do
+  @current_user = User.find session[:user_id]
+  erb :'photos/new'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def current_user
   @current_user ||= User.find(session[:user_id]) if session[:user_id]
