@@ -9,7 +9,7 @@
 <button id="profBtn">My Profile</button>
 
 
-<% @photos.each do |photo| %>
+<% @photos.order(created_at: :desc).each do |photo| %>
   <a href="/photos/<%= photo.id %>"><img src="<%= photo.url %>" ></a>
 <% end %>
 
