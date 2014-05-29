@@ -102,7 +102,7 @@ end
 get '/user' do
   @current_user = User.find session[:user_id]
   @photos = @current_user.photos
-  erb :'user/show', :layout => :'logged_in'
+  erb :'user/show'
 end
 
 
