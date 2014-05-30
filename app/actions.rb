@@ -41,6 +41,7 @@ post '/users/login' do
 
   if @current_user
     session[:user_id] = @current_user.id
+    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
     redirect '/photos'
   else
     erb :'users/login'
@@ -55,7 +56,7 @@ end
 get '/photos' do
   @current_user = User.find session[:user_id]
   @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.today)
+  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'photos/index'
 end
 
@@ -82,6 +83,7 @@ post '/photos/new' do
   user_id:  @current_user.id
   )
   if @photo.save
+    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
     redirect '/user'
 # binding.pry 
   else

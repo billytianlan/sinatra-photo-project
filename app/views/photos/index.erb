@@ -29,6 +29,9 @@
 <button id="newBtn">New</button>
 <button id="profBtn">My Profile</button>
 
+<br>
+<p>Today's photo theme is: <%= @theme.name %></p>
+<br>
 
 <div class="gallery cf row">
   <% @photos.order(created_at: :desc).each do |photo| %>
