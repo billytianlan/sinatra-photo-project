@@ -151,7 +151,7 @@ body {
 }
 
 
-.navbar { height: 5em; }
+.navbar { height: 3.5em; }
 
 .gallery {
   width: 850px;
@@ -167,7 +167,7 @@ body {
 }
 
 .gallery > div > img {
-  width: 250px;
+  max-width: 250px;
   transition: .1s transform;
   transform: translateZ(0);
   /* hack */
