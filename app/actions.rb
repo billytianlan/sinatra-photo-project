@@ -70,6 +70,7 @@ end
 
 get '/photos/new' do
   @current_user = User.find(session[:user_id])
+  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'photos/new'
 end
 
