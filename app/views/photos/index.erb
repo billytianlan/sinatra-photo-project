@@ -31,11 +31,14 @@
 
 
 <div class="gallery cf">
-<% @photos.order(created_at: :desc).each do |photo| %>
-  <div>
-    <a href="/photos/<%= photo.id %>"><img src="<%= photo.url %>" ></a>
+  <% @photos.order(created_at: :desc).each do |photo| %>
+  <div class="resize">
+    <a href="/photos/<%= photo.id %>">
+      <img src="<%= photo.url %>">
+    </a>
   </div>
-<% end %>
+  <% end %>
 </div>
+
 </body>
 
