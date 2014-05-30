@@ -1,0 +1,207 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+.home {
+
+background: url("http://i.imgur.com/bCB41XQ.jpg") no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.title {
+  font-family: 'Satisfy';
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  outline: none;
+}
+
+body {
+  font-family: 'Montserrat';
+ /* background-image:url("http://wallpapersus.com/wp-content/uploads/2012/11/Photographer-Taking-A-Picture.jpg");*/
+  background-size: 100%;
+}
+
+.main-form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-form {
+  max-width: 400px;
+  max-height: 900px;
+  margin-top: 100px;
+  margin-left: 950px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(150,0,10,0.6);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.main-form__title {
+  padding: 20px 0;
+  text-align: center;
+}
+.main-form__title h1 {
+  position: relative;
+  font-size: 5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+.main-form__title h1:after {
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  height: 4px;
+  background: #f2f2f2;
+  content: "";
+}
+.main-form__body--input {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #fcfcfc;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  outline: 0;
+  font-size: 1.5rem;
+  color: #666666;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-form__body--input:focus {
+  background: #f7f7f7;
+}
+.main-form__body .btn {
+  display: block;
+  width: 48%;
+  margin-top: 20px;
+  float: left;
+  background: #e6e6e6;
+  padding: 15px;
+  border: 0;
+  font-size: 1rem;
+  color: #999999;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-form__body .btn:last-of-type {
+  float: right;
+  background: #FCA44B;
+  color: #fff;
+}
+.main-form__body .btn:last-of-type:hover {
+  background: #fb8b19;
+}
+
+::-webkit-input-placeholder {
+  color: black;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+:-moz-placeholder {
+  color: #cccccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+::-moz-placeholder {
+  color: #cccccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+  color: #cccccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.navbar { height: 5em; }
+
+.gallery {
+  width: 790px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #333;
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  width: 250px;
+  transition: .1s transform;
+  transform: translateZ(0);
+  /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.5, 1.5);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+/*
+h1 {
+  margin: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+footer {
+  margin: 80px 0;
+  text-align: center;
+}*/
+
+
