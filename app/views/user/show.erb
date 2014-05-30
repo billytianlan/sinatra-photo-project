@@ -1,7 +1,9 @@
 <body class="home">
 
 <h3>Hello <%= @current_user.username %> User: <%= @current_user.id %></h3>
-
+<br>
+<p>Today's photo theme is: <%= @theme.name %></p>
+<br>
 
 <form method="post" action="/logout">
   <input type="submit" value="Logout">
