@@ -30,13 +30,13 @@
 <button id="profBtn">My Profile</button>
 
 
-<div class="gallery cf">
+<div class="gallery cf row">
   <% @photos.order(created_at: :desc).each do |photo| %>
-  <div class="resize">
     <a href="/photos/<%= photo.id %>">
-      <img src="<%= photo.url %>">
+      <div class="photo-container col-md-4" style="background-image: url(<%= photo.url %>)">
+        
+      </div>
     </a>
-  </div>
   <% end %>
 </div>
 

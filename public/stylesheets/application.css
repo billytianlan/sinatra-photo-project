@@ -154,7 +154,7 @@ body {
 .navbar { height: 3.5em; }
 
 .gallery {
-  width: 790px;
+  width: 1000px;
   margin: 0 auto;
   padding: 5px;
   background: #333;
@@ -194,6 +194,13 @@ body {
 
 .resize {
   max-width: 250px;
+}
+
+.photo-container{
+  height: 200px;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
