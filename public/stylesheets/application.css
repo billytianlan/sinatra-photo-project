@@ -197,11 +197,19 @@ body {
 }
 
 .photo-container{
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   background-size: 100%;
   background-repeat: no-repeat;
 }
+
+.show-photo-container{
+  height: 700px;
+  overflow: hidden;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 
 
 

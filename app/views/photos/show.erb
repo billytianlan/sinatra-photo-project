@@ -2,7 +2,7 @@
 
 <h3>Hello <%= @current_user.username %> User: <%= @current_user.id %></h3>
 
-<img src="<%= @photo.url %>" >
+<img src="<%= @photo.url %>" class="show-photo-container">
 <h3>Caption: <%= @photo.description %> </h3>
 <form method="post" action="/vote/<%= @photo.id %>">
   <input type="submit" value="Vote">

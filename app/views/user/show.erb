@@ -10,9 +10,11 @@
 <button id="mainBtn">Main</button>
 
 
-
+<div class="row">
 <% @photos.each do |photo| %>
-  <img src="<%= photo.url %>" >
+<div class="show-photo-container col-md-6 col-md-offset-3" style="background-image: url(<%= photo.url %>)">
+</div>
 <% end %>
+</div>
 
 </body>
