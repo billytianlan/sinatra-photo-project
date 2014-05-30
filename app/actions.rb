@@ -55,6 +55,7 @@ end
 get '/photos' do
   @current_user = User.find session[:user_id]
   @photos = Photo.all
+  @theme = Theme.where("DATE(created_at) = ?", Date.today)
   erb :'photos/index'
 end
 
