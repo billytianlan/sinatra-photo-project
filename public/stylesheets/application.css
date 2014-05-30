@@ -167,7 +167,7 @@ body {
 }
 
 .gallery > div > img {
-  max-width: 250px;
+  width: 250px;
   transition: .1s transform;
   transform: translateZ(0);
   /* hack */
@@ -191,17 +191,10 @@ body {
 .cf:after {
   clear: both;
 }
-/*
-h1 {
-  margin: 40px 0;
-  font-size: 24px;
-  text-align: center;
-  text-transform: uppercase;
+
+.resize {
+  max-width: 250px;
 }
 
-footer {
-  margin: 80px 0;
-  text-align: center;
-}*/
 
 
