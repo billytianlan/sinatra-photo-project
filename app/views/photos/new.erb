@@ -1,22 +1,20 @@
 <body class="home">
 
+<form class="main-form first" method="post" action="/photos/new">
+  <div class="main-form__title">
+    <h1>Upload</h1>
+  </div>
+  <div class="main-form__body">
+    <input class="main-form__body--input" type="text" name="url" placeholder="URL"/>
+    <input class="main-form__body--input" type="text" name="description" placeholder="Description"/>
+    <button class="btn">Clear</button>
+    <button class="btn" type="submit" value="Register">Post</button>
 
-<p>Add your new photo in the box below.</p>
-<br>
-<p>Today's photo theme is: <%= @theme.name %></p>
-<br>
-<form method="post" action="/photos/new">
-  <div>
-    <label>Photo:</label>
-    <input type="text" name="url">
   </div>
-  <div>
-    <label>Description:</label>
-    <input type="text" name="description">
-  </div>
-     <input type="submit" value="Submit">
-  </div>
-</form>
+</form> 
 
 </body>
+
+
+
 
