@@ -78,10 +78,12 @@ end
 post '/photos/new' do
   @current_user = User.find session[:user_id]
   # @photos = Photo.all
+  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   @photo = Photo.new(
   url: params[:url],
   description: params[:description],
-  user_id:  @current_user.id
+  user_id:  @current_user.id,
+  theme_id: @theme.id
   )
   if @photo.save
     @theme = Theme.where("DATE(created_at) = ?", Date.today).first
@@ -92,12 +94,6 @@ post '/photos/new' do
   end
 end
 
-
-# get 'photos/new' do
-#    @current_user = User.find session[:user_id]
-#    erb :'photos/new'
-# end
-
 get '/photos/show' do
   @current_user = User.find session[:user_id]
   erb :'photos/new'
@@ -106,7 +102,7 @@ end
 get '/user' do
   @current_user = User.find session[:user_id]
   @photos = @current_user.photos
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'user/show'
 end
 
@@ -128,7 +124,9 @@ end
 
 
 
-
+# def current_theme
+#   @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+# end
 
 
 
