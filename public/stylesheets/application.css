@@ -237,6 +237,18 @@ body {
 
 }
 
+.like{
+  position: absolute;
+  bottom: 5px;
+
+}
+
+.count {
+  position: absolute;
+  bottom: 5px;
+  margin-left: 450px;
+}
+
 
 
 
