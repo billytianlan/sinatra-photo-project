@@ -37,7 +37,6 @@
   <% @photos.order(created_at: :desc).each do |photo| %>
     <a href="/photos/<%= photo.id %>">
       <div class="photo-container col-md-4" style="background-image: url(<%= photo.url %>)">
-        
       </div>
     </a>
   <% end %>
