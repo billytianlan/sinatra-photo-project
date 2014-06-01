@@ -26,7 +26,6 @@
 </nav>
 </header>
 
-<body class="home">
 
 <br>
 <br>
@@ -36,15 +35,18 @@
   <% @photos.order(created_at: :desc).each do |photo| %>
     <a href="/photos/<%= photo.id %>">
       <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
-      <form method="post" action="/vote/<%= photo.id %>">
-      <button class="btn btn-primary like" role="button" type="submit" value="Vote"><span class="glyphicon glyphicon-thumbs-up">  Like  </span>
-      </form>
-      <h3 class="count"><%= photo.votes.size %></h3>
+      <a href="/photos/<%= photo.id %>"><button class="btn btn-primary like" role="button">
+      <span class="glyphicon glyphicon-resize-full">  Expand  </span></button></a>
+      <button class="btn btn-primary count" type="submit" value="Like">
+      <span class="glyphicon glyphicon-fire">  
+        <%= photo.votes.size %>
+      </span>
+    </button>
     </a>
       </div>
     </a>
   <% end %>
 </div>
 
-</body>
+
 

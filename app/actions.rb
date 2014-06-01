@@ -119,7 +119,7 @@ post '/vote/:id' do
     user_id: session[:user_id]
     )
   @vote.save
-  # redirect "/photos/#{params[:id]}"
+  redirect "/photos/#{params[:id]}"
 end
 
 
