@@ -1,0 +1,23 @@
+<%= erb :'shared/_nav' %>
+
+
+<br>
+<br>
+
+<div class="row gallery cf">
+<p class="title"><%= @theme.name %></p>
+  <% @photos.each do |photo| %>
+    <a href="/photos/<%= photo.id %>">
+      <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
+      <a href="/photos/<%= photo.id %>"><button class="btn btn-primary like" role="button">
+      <span class="glyphicon glyphicon-resize-full">  Expand  </span></button></a>
+      <button class="btn btn-primary count" type="submit" value="Like">
+      <span class="glyphicon glyphicon-fire">  
+        <%= photo.votes.size %>
+      </span>
+    </button>
+    </a>
+      </div>
+    </a>
+  <% end %>
+</div>

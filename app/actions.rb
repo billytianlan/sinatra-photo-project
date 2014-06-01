@@ -122,6 +122,14 @@ post '/vote/:id' do
   redirect "/photos/#{params[:id]}"
 end
 
+get '/hot' do
+  @current_user = User.find(session[:user_id])
+  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  @photos = Photo.all
+  @photos.sort! { |x,y| y.votes.size <=> x.votes.size }
+  erb :'photos/hot'
+end
+
 
 
 # def current_theme

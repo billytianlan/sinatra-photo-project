@@ -9,16 +9,19 @@
   <% @photos.order(created_at: :desc).each do |photo| %>
     <a href="/photos/<%= photo.id %>">
       <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
-      <a href="/photos/<%= photo.id %>"><button class="btn btn-primary like" role="button">
-      <span class="glyphicon glyphicon-resize-full">  Expand  </span></button></a>
+      <a href="/photos/<%= photo.id %>">
+        <button class="btn btn-primary like" role="button">
+          <span class="glyphicon glyphicon-resize-full">  Expand  </span>
+        </button>
+      </a>
       <button class="btn btn-primary count" type="submit" value="Like">
-      <span class="glyphicon glyphicon-fire">  
-        <%= photo.votes.size %>
-      </span>
-    </button>
-    </a>
+        <span class="glyphicon glyphicon-fire">  
+          <%= photo.votes.size %>
+        </span>
+      </button>
+      </a>
       </div>
-    </a>
+      </a>
   <% end %>
 </div>
 
