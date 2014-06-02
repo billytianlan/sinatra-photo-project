@@ -11,7 +11,7 @@
 
 
 <div class="gallery cf row">
-<p class="title">Carpe Ipsum</p>
+<p class="title"><%= @view_user.username %></p>
 <% @photos.order(created_at: :desc).each do |photo| %>
 <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
 <a href="/photos/<%= photo.id %>"><button class="btn btn-primary like" role="button">
@@ -21,6 +21,7 @@
         <%= photo.votes.size %>
       </span>
     </button>
+    <img src="<%= @view_user.profile_photo %>" alt="..." class="img-thumbnail prof">
 </div>
 <% end %>
 </div>

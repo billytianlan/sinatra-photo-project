@@ -99,9 +99,10 @@ get '/photos/show' do
   erb :'photos/new'
 end
 
-get '/user' do
+get '/user/:id' do
   @current_user = User.find session[:user_id]
-  @photos = @current_user.photos
+  @view_user = User.find params[:id]
+  @photos = @view_user.photos
     @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'user/show'
 end

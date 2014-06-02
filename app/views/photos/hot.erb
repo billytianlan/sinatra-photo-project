@@ -5,7 +5,7 @@
 <br>
 
 <div class="row gallery cf">
-<p class="title"><%= @theme.name %></p>
+<p class="title"><%= Date.today%><br><%= @theme.name %></p>
   <% @photos.each do |photo| %>
     <a href="/photos/<%= photo.id %>">
       <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
@@ -16,6 +16,9 @@
         <%= photo.votes.size %>
       </span>
     </button>
+    <a href="/user/<%= photo.user.id %>">
+    <img src="<%= photo.user.profile_photo %>" alt="..." class="img-thumbnail prof">
+    </a>
     </a>
       </div>
     </a>
