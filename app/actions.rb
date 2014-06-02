@@ -17,7 +17,8 @@ end
 post '/users/new' do
   @current_user = User.new(
   username: params[:username],
-  password: params[:password]
+  password: params[:password],
+  profile_photo: params[:profile_photo]
   )
   if @current_user.save
   # binding.pry
@@ -87,7 +88,7 @@ post '/photos/new' do
   )
   if @photo.save
     @theme = Theme.where("DATE(created_at) = ?", Date.today).first
-    redirect '/user'
+    redirect '/photos'
 # binding.pry 
   else
   erb :'photos/show'
