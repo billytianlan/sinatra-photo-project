@@ -56,8 +56,32 @@ end
 
 get '/photos' do
   @current_user = User.find session[:user_id]
-  @photos = Photo.all
+  # @photos = Photo.all
   @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  @photos = @theme.photos
+  erb :'photos/index'
+end
+
+get '/weekly' do
+  @current_user = User.find session[:user_id]
+  @photos = Photo.all
+  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
+  erb :'photos/index'
+end
+
+get '/theme/:id' do
+  @current_user = User.find session[:user_id]
+  # @photos = Photo.all
+  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
+  @photos = @theme.photos
+  erb :'photos/index'
+end
+
+get '/yesterday' do
+  @current_user = User.find session[:user_id]
+  # @photos = Photo.all
+  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
+  @photos = @theme.photos
   erb :'photos/index'
 end
 
@@ -98,6 +122,7 @@ end
 get '/photos/show' do
   @current_user = User.find session[:user_id]
   erb :'photos/new'
+
 end
 
 get '/user/:id' do
@@ -111,6 +136,7 @@ end
 get '/photos/:id' do
   @photo = Photo.find params[:id]
   @current_user = User.find session[:user_id]
+  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'photos/show'
 end
 

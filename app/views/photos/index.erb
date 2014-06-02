@@ -5,7 +5,7 @@
 <br>
 
 <div class="row gallery cf">
-<p class="title"><%= Date.today%><br><%= @theme.name %></p>
+<p class="title"><br><%= @theme.name %></p>
   <% @photos.order(created_at: :desc).each do |photo| %>
     <a href="/photos/<%= photo.id %>">
       <div class="photo-container col-md-10 col-md-offset-1" style="background-image: url(<%= photo.url %>)">
