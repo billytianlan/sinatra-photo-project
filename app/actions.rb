@@ -42,7 +42,7 @@ post '/users/login' do
 
   if @current_user
     session[:user_id] = @current_user.id
-    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+    # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
     redirect '/photos'
   else
     erb :'users/login'
@@ -57,33 +57,29 @@ end
 get '/photos' do
   @current_user = User.find session[:user_id]
   # @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
-  @photos = @theme.photos
-  erb :'photos/index'
-end
-
-get '/weekly' do
-  @current_user = User.find session[:user_id]
+  # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
   erb :'photos/index'
 end
 
-get '/theme/:id' do
-  @current_user = User.find session[:user_id]
-  # @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
-  @photos = @theme.photos
-  erb :'photos/index'
-end
 
-get '/yesterday' do
-  @current_user = User.find session[:user_id]
-  # @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
-  @photos = @theme.photos
-  erb :'photos/index'
-end
+# Needs refactoring
+# get '/weekly' do
+#   @current_user = User.find session[:user_id]
+#   @photos = Photo.all
+#   @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
+#   erb :'photos/index'
+# end
+
+# get '/yesterday' do
+#   @current_user = User.find session[:user_id]
+#   # @photos = Photo.all
+#   @theme = Theme.where("DATE(created_at) = ?", Date.new(2014,05,31)).first
+#   @photos = @theme.photos
+#   erb :'photos/index'
+# end
+
+
 
 post '/photos' do
   @current_user = User.find session[:user_id]
@@ -95,7 +91,7 @@ end
 
 get '/photos/new' do
   @current_user = User.find(session[:user_id])
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'photos/new'
 end
 
@@ -103,15 +99,15 @@ end
 post '/photos/new' do
   @current_user = User.find session[:user_id]
   # @photos = Photo.all
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   @photo = Photo.new(
   url: params[:url],
   description: params[:description],
   user_id:  @current_user.id,
-  theme_id: @theme.id
+  # theme_id: @theme.id
   )
   if @photo.save
-    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+    # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
     redirect '/photos'
 # binding.pry 
   else
@@ -129,14 +125,14 @@ get '/user/:id' do
   @current_user = User.find session[:user_id]
   @view_user = User.find params[:id]
   @photos = @view_user.photos
-    @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+    # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'user/show'
 end
 
 get '/photos/:id' do
   @photo = Photo.find params[:id]
   @current_user = User.find session[:user_id]
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   erb :'photos/show'
 end
 
@@ -152,7 +148,7 @@ end
 
 get '/hot' do
   @current_user = User.find(session[:user_id])
-  @theme = Theme.where("DATE(created_at) = ?", Date.today).first
+  # @theme = Theme.where("DATE(created_at) = ?", Date.today).first
   @photos = Photo.all
   @photos.sort! { |x,y| y.votes.size <=> x.votes.size }
   erb :'photos/hot'

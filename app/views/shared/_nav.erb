@@ -18,14 +18,6 @@
         <li class="active"><a href="/user/<%= @current_user.id %>"><%= @current_user.username %></a></li>
         <li><a href="/photos/new"><span class="glyphicon glyphicon-camera"></span></a></li>
         <li><a href="/hot"><span class="glyphicon glyphicon-fire"></span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-calendar"></span><b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="/photos">Today</a></li>
-            <li><a href="/theme/<%= @theme.id %>">Yesterday</a></li>
-            <li><a href="/weekly">This Week</a></li>
-          </ul>
-        </li>
         <form class="navbar-form navbar-right" method="post" action="/logout">
         <button type="submit" class="btn btn-default">Logout</button>
         </form>
